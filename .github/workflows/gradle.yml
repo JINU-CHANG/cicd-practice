@@ -49,8 +49,8 @@ jobs:
         run: |
           # main 설정 파일 디렉토리로 이동
           cd ./src/main/resources
-          touch ./application-database.properties
-          echo "${{ secrets.MAIN_DATABASE_YML }}" >> ./application-database.properties
+          touch ./application.properties
+          echo "${{ secrets.MAIN_DATABASE_YML }}" >> ./application.properties
         shell: bash
         
    #빌드(테스트 스킵)
