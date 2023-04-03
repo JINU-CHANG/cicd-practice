@@ -9,9 +9,7 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches:
-      - main
-      - dev
+    branches: ["main", "dev"]
 
 permissions:
   contents: read
@@ -78,4 +76,4 @@ jobs:
             docker rm -f $(docker ps -qa)
             docker rmi ${{ secrets.DOCKER_USERNAME }}/sample            
             docker pull ${{ secrets.DOCKER_USERNAME }}/sample
-            docker-compose up -d
+            docker run -d -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/sample
