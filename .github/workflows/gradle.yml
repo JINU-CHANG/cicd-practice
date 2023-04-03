@@ -53,9 +53,9 @@ jobs:
           echo "${{ secrets.MAIN_DATABASE_YML }}" >> ./application-database.properties
         shell: bash
         
-    # gradle build
+   #빌드(테스트 스킵)
       - name: Build with Gradle
-        run: ./gradlew build -x test -x ktlintCheck -x ktlintTestSourceSetCheck -x ktlintMainSourceSetCheck -x ktlintKotlinScriptCheck
+        run: ./gradlew build -x test
         
         
     # Spring 어플리케이션 Docker Image 빌드
