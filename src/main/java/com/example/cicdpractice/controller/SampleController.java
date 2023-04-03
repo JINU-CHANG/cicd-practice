@@ -8,6 +8,7 @@ public class SampleController {
 
     @RequestMapping("/sample")
     public String sample(){
+        //test1
         return "Sample!";
     }
 }
