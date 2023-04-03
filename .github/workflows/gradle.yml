@@ -41,7 +41,11 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-            
+    
+     #gradle 권한 추가
+      - name: Grant Execute Permission For Gradlew
+        run: chmod +x gradlew
+        
     # main 설정 파일 생성 및 write
       - name: Set .properties for main/dev
         run: |
